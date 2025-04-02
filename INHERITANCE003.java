@@ -53,7 +53,7 @@ public class INHERITANCE003
 {
     public static void main(String[] args) 
     {
-        Student student = new Student("Ollie",  "6381 Hollywood Blvd. Los Angeles 90028",  "123456");
+        Student student = new Student("Ollie ",  " 6381 Hollywood Blvd. Los Angeles 90028",  "123456");
         System.out.println(student.toString());
         System.out.println("Study credits " + student.getCredits());
         student.study();

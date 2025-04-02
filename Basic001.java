@@ -17,3 +17,5 @@ public class Basic001 {
         scanner.close();
     }
 }
+
+//Nam ăn cứt

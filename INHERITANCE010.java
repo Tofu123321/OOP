@@ -12,6 +12,10 @@ class Product
         this.quantity = quantity;
     }
 
+    public double calculateCost(int quantity)
+    {
+        return price * quantity;
+    }
 
     public void display()
     {
@@ -29,7 +33,8 @@ class Book extends Product
         super(name, price, quantity);
         this.author = author;
     }
-    public double caculateCost(int quantity)
+    @Override
+    public double calculateCost(int quantity)
     {
         return price * quantity;
     }
@@ -51,6 +56,7 @@ class Electronics extends Product
         super(name, price, quantity);
         this.brand = brand;
     }
+    @Override
     public double calculateCost(int quantity)
     {
         return price * quantity *1.1;
@@ -81,14 +87,7 @@ class User
        if(quantity <= product.quantity)
        {
             double spent = 0;
-            if(product instanceof Book)
-            {
-                spent = ((Book) product).caculateCost(quantity);
-            }
-            else if(product instanceof Electronics)
-            {
-                spent = ((Electronics) product).calculateCost(quantity);
-            }
+            spent = product.calculateCost(quantity);
             System.out.println("User: " + username + " bought " + quantity + " " + product.name + " for $" + spent);
             product.quantity -= quantity;
             totalSpent += spent;
